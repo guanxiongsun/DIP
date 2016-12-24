@@ -1,0 +1,63 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: WaterMark - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating command line "rc.exe /l 0x804 /fo"Debug/WaterMark.res" /d "_DEBUG" /d "_AFXDLL" "D:\newproject\Òþ²Ø&¼ì²â(template)\WaterMark.rc"" 
+Creating temporary file "C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP96.tmp" with contents
+[
+/nologo /MDd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_AFXDLL" /D "_MBCS" /FR"Debug/" /Fp"Debug/WaterMark.pch" /YX"stdafx.h" /Fo"Debug/" /Fd"Debug/" /FD /GZ /c 
+"D:\newproject\Òþ²Ø&¼ì²â(template)\JpegSteg.cpp"
+"D:\newproject\Òþ²Ø&¼ì²â(template)\MainFrm.cpp"
+"D:\newproject\Òþ²Ø&¼ì²â(template)\StegBmp.cpp"
+"D:\newproject\Òþ²Ø&¼ì²â(template)\WaterMark.cpp"
+"D:\newproject\Òþ²Ø&¼ì²â(template)\WaterMarkDoc.cpp"
+"D:\newproject\Òþ²Ø&¼ì²â(template)\WaterMarkView.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP96.tmp" 
+Creating temporary file "C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP97.tmp" with contents
+[
+/nologo /MDd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_AFXDLL" /D "_MBCS" /FR"Debug/" /Fp"Debug/WaterMark.pch" /Yc"stdafx.h" /Fo"Debug/" /Fd"Debug/" /FD /GZ /c 
+"D:\newproject\Òþ²Ø&¼ì²â(template)\StdAfx.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP97.tmp" 
+Creating temporary file "C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP98.tmp" with contents
+[
+ijl15.lib image.lib /nologo /subsystem:windows /incremental:yes /pdb:"Debug/WaterMark.pdb" /debug /machine:I386 /out:"bin/WaterMark.exe" /pdbtype:sept /libpath:"lib\\" 
+".\Debug\JpegSteg.obj"
+".\Debug\MainFrm.obj"
+".\Debug\StdAfx.obj"
+".\Debug\StegBmp.obj"
+".\Debug\WaterMark.obj"
+".\Debug\WaterMarkDoc.obj"
+".\Debug\WaterMarkView.obj"
+".\Debug\WaterMark.res"
+]
+Creating command line "link.exe @C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP98.tmp"
+<h3>Output Window</h3>
+Compiling resources...
+Compiling...
+StdAfx.cpp
+Compiling...
+JpegSteg.cpp
+MainFrm.cpp
+StegBmp.cpp
+d:\newproject\Òþ²Ø&¼ì²â(template)\yuv.h(12) : warning C4005: 'CLIP' : macro redefinition
+        d:\newproject\Òþ²Ø&¼ì²â(template)\stdafx.h(12) : see previous definition of 'CLIP'
+D:\newproject\Òþ²Ø&¼ì²â(template)\StegBmp.cpp(197) : warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
+D:\newproject\Òþ²Ø&¼ì²â(template)\StegBmp.cpp(255) : warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+WaterMark.cpp
+WaterMarkDoc.cpp
+WaterMarkView.cpp
+Linking...
+
+
+
+<h3>Results</h3>
+WaterMark.exe - 0 error(s), 3 warning(s)
+</pre>
+</body>
+</html>
