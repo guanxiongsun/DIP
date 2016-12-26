@@ -100,7 +100,24 @@ end
 figure;
 imshow(log(abs(result)),[]);
 
+%快速余弦变化
+YY = MyFDCT2(Y);
 
+%显示8x8的DCT的基函数
+figure;
+for u = 0:7
+    for v = 0:7
+        R = bf(u,v);
+        subplot(8,8,(u)*8+v+1);
+        imshow(R,[]);
+    end
+end
+% result = [];
+% for v = 1:8
+%     result = cat(1,result,R(:,(v-1)*64+1:v*64));
+% end
+% figure;
+% imshow(log(abs(result)),[]);
 
 % im1 = fft2(Y);
 % im2 = MyDFT2(Y);
