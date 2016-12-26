@@ -22,6 +22,7 @@ function X = Padding(x)
     if (n ~= n1)
         X = [X zeros(m1,n1-n)];
     end
+    X=x;
 end
 
 function X= MyFFT(x)
