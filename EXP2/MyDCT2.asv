@@ -1,0 +1,22 @@
+function X = MyDCT2(x)
+    [m,n] = size(x);
+    for p = 1:m
+        
+            
+
+end
+
+function X = MyDCT(x)
+    N = size(x,1);
+    A = CreateA(N);
+    X = A*x;
+end
+
+function A = CreateA(N)
+    A = zeros(N,N);
+    for i =1:N
+        for j =1:N
+            A(i,j) =  cos((2*j-1)*(i-1)*pi/(2*N));
+        end
+    end
+end
