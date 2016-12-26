@@ -33,64 +33,69 @@ function [Header,Info,X] = bmpRead(bmpname)
     imshow(BMP);
     title('BMP')
     
-    YIQ = rgb2yiq(BMP);
-    XYZ = rgb2xyz(BMP);
+%     Ycbcr = rgb2ycbcr(BMP);
+%     [Y,~,~] = Seperate(Ycbcr);
+%     %Y = ScaleTo255(Y);
+%     imshow(Y,[]);
     
-    %分解RGB
-    [R, G, B] = Seperate(BMP);
-    %显示单独分量
-    figure;
-    imshow(R,[]);
-    title('R')
-    figure;
-    imshow(G,[]);
-    title('G')
-    figure;
-    imshow(B,[]);
-    title('B');
-    
-    [Y,I,Q] = Seperate(YIQ);
-    Y = ScaleTo255(Y);
-    I = ScaleTo255(I);
-    Q = ScaleTo255(Q);
-    figure;
-    imshow(uint8(Y));
-    title('Y');
-    figure;
-    imshow(uint8(I));
-    title('I');
-    figure;
-    imshow(uint8(Q));
-    title('Q');
-    
-    [X,Y_xyz,Z] = Seperate(XYZ);
-    X = ScaleTo255(X);
-    Y_xyz = ScaleTo255(Y_xyz);
-    Z = ScaleTo255(Z);
-    figure;
-    imshow(uint8(X));
-    title('X');
-    figure;
-    imshow(uint8(Y_xyz));
-    title('Y_xyz');
-    figure;
-    imshow(uint8(Z));
-    title('Z');
-    
-    [H,S,I] = rgb2hsi(BMP);
-    H = ScaleTo255(H);
-    S = ScaleTo255(S);
-    I = ScaleTo255(I);
-    figure;
-    imshow(uint8(H));
-    title('H');
-    figure;
-    imshow(uint8(S));
-    title('S');
-    figure;
-    imshow(uint8(I));
-    title('I');
-    sbs;
+%     YIQ = rgb2yiq(BMP);
+%     XYZ = rgb2xyz(BMP);
+%     
+%     %分解RGB
+%     [R, G, B] = Seperate(BMP);
+%     %显示单独分量
+%     figure;
+%     imshow(R,[]);
+%     title('R')
+%     figure;
+%     imshow(G,[]);
+%     title('G')
+%     figure;
+%     imshow(B,[]);
+%     title('B');
+%     
+%     [Y,I,Q] = Seperate(YIQ);
+%     Y = ScaleTo255(Y);
+%     I = ScaleTo255(I);
+%     Q = ScaleTo255(Q);
+%     figure;
+%     imshow(uint8(Y));
+%     title('Y');
+%     figure;
+%     imshow(uint8(I));
+%     title('I');
+%     figure;
+%     imshow(uint8(Q));
+%     title('Q');
+%     
+%     [X,Y_xyz,Z] = Seperate(XYZ);
+%     X = ScaleTo255(X);
+%     Y_xyz = ScaleTo255(Y_xyz);
+%     Z = ScaleTo255(Z);
+%     figure;
+%     imshow(uint8(X));
+%     title('X');
+%     figure;
+%     imshow(uint8(Y_xyz));
+%     title('Y_xyz');
+%     figure;
+%     imshow(uint8(Z));
+%     title('Z');
+%     
+%     [H,S,I] = rgb2hsi(BMP);
+%     H = ScaleTo255(H);
+%     S = ScaleTo255(S);
+%     I = ScaleTo255(I);
+%     figure;
+%     imshow(uint8(H));
+%     title('H');
+%     figure;
+%     imshow(uint8(S));
+%     title('S');
+%     figure;
+%     imshow(uint8(I));
+%     title('I');
+%     sbs;
 end
 
 %保存各个分量
