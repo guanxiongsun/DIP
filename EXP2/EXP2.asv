@@ -3,9 +3,7 @@
 Ycbcr = RGB2YCBCR(BMP);
 
 [Y,~,~] = Seperate(Ycbcr);
-figure;
-imshow(Y,[]);
-title('Y result');
+
 %分成kxk的图像，用三维数组R保存
 k = 8;
 [m,n] = size(Y);
@@ -78,13 +76,9 @@ for q = 1:n1
     result = cat(1,result,img(:,(q-1)*n2*8+1:q*n2*8));
 end
 figure;
-imshow(result,[]);
-title('DCT result');
-
-figure;
 result = ScaleTo255(result);
 imshow(log(result),[]);
-title('DCT log result');
+title('DCT result');
 
 %使用DCT复原,x+y<ed留下
 C3=C2;
@@ -115,7 +109,7 @@ for q = 1:n1
     result = cat(1,result,img(:,(q-1)*n2*8+1:q*n2*8));
 end
 figure;
-imshow(result,[]);
+imshow(log(abs(result)),[]);
 title('Reconstruct result:end = 8');
 
 %使用DCT复原,x+y<ed留下
@@ -147,7 +141,7 @@ for q = 1:n1
     result = cat(1,result,img(:,(q-1)*n2*8+1:q*n2*8));
 end
 figure;
-imshow(result,[]);
+imshow(log(abs(result)),[]);
 title('Reconstruct result:end = 12');
 
 %使用DCT复原,x+y<ed留下
@@ -179,7 +173,7 @@ for q = 1:n1
     result = cat(1,result,img(:,(q-1)*n2*8+1:q*n2*8));
 end
 figure;
-imshow(result,[]);
+imshow(log(abs(result)),[]);
 title('Reconstruct result');
 
 %快速余弦变化
