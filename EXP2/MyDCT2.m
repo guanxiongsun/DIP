@@ -5,7 +5,7 @@ function X = MyDCT2(x)
         X (p,:) = MyDCT(x(p,:)')';
     end
     for q = 1:n
-        X (:,q) = MyDCT(x(:,q));
+        X (:,q) = MyDCT(X(:,q));
     end
 end
 

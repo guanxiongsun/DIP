@@ -90,7 +90,6 @@ function [Header,Info,X] = bmpRead(bmpname)
     figure;
     imshow(uint8(I));
     title('I');
-    sbs;
 end
 
 %保存各个分量
