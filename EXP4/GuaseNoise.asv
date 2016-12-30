@@ -1,4 +1,0 @@
-function x = GuaseNoise(x,mu,sigma)
-    [m,n] = size(x);
-    Noise = rand(m,n);
-end

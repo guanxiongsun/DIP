@@ -1,7 +1,0 @@
-function x = GaussNoise(x,mu,sigma)
-    x = double(x);
-    [m,n] = size(x);
-    Noise = rand(m,n)-0.5;
-    Noise = gaussmf(Noise,[sigma,mu])*;
-    x = x + Noise;
-end

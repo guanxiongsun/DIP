@@ -167,7 +167,7 @@ end
 function [X] = RGBRead(fid, Info)
     w = Info.biWidth;
     h = Info.biHeight;
-    % NOTE: BMP files are stored so that scanlines use a multiple of 4 bytes.
+    % 4×Ö½Ú¶ÔÆë.
     scanlineLength = 4 * ceil((3 * w) / 4);
     numSamples = scanlineLength * abs(h);
     Data = fread(fid,numSamples,'uint8=>uint8');
