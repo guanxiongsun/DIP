@@ -16,27 +16,90 @@ B3 = OSTU(half3);
 B4 = OSTU(half4);
 %合并二值化的图像
 im_new = cat(1,B1,B2,B3,B4);
-imshow(im_new);
-
 
 %噪声处理，(去掉不连通的点)图像平滑（先膨胀后腐蚀）
-im = filter2([1,1,1;1,1,1;1,1,1],im_new);
-figure;
-imshow(im>7);
 
 %按行对图像分割
-
 [m,n] = size(im_new);
-% for i=1:m
-%     if sum(im_new(i,:))>
-%     end
-% end
+right=0;
+rows = {};
+num = 1;
+for i=1:m
+    if i<right
+    else
+        if sum(~im_new(i,:))>3
+        left = i-1;
+        for j = i:m
+            if (sum(~im_new(j,:))<1)
+                right = j;
+                %imwrite(im_new(up:down,:),strcat(num2str(up),'.bmp'));
+                rows{num} = im_new(left:right,:);
+                num=num+1;
+                break;
+            end
+        end
+        end
+    end
+end
 
 %按列对行分割
+
+for p = 1:size(rows,2)
+    left =1;
+    right = 0;
+    next_left = 0;
+    im = rows{1,p};
+    while(left<n)
+        if sum(~im(:,left))>0
+            right = getRight(im,left);
+            next_left = getNextLeft(im,right);
+            
+            if right - left > 1
+                imwrite(im(:,left:right),strcat(num2str(p),'_',num2str(left),'.bmp'));
+                left = next_left-1;
+            else
+                if next_left-right>size(im,1)/3
+                    imwrite(im(:,left:right),strcat(num2str(p),'_',num2str(left),'.bmp'));
+                    left = next_left-1;
+                else
+                    right = getRight(im,next_left);
+                    right = getNextLeft(im,right);
+                    imwrite(im(:,left:right),strcat(num2str(p),'_',num2str(left),'.bmp'));
+                    left = right;                  
+                end
+            end
+        else
+            left = left +1;
+        end
+    end
+end
 
 
 %统计字符数。
 end
+
+
+function next_left = getNextLeft(im,right)
+    n = size(im,2);
+    next_left = n;
+    for i = right+1:n
+        if (sum(~im(:,i))>0)
+            next_left = i;
+            break;
+        end
+    end
+end
+
+function right = getRight(im,left)
+    n = size(im,2);
+    for i = left+1:n
+        if sum(~im(:,i))==0
+            right = i;
+            break;
+        end
+    end
+end
+
 function im_new = rectcrop(im)
     points = detectHarrisFeatures(im);
     location = points.Location;
