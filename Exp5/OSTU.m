@@ -9,7 +9,7 @@ function [im,T] = OSTU(im)
         end
     end
     T = Tmax;
-    im = (im>T);
+    im = (im>T+5);
 end
 
 function g = cal(im, T)
